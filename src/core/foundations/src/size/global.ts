@@ -14,8 +14,7 @@ const size = {
 /*
    We attempt to use these values for icons within Source components.
    They are analogous with component heights defined by the size values
-   above. They are based on the size of icons used within the button
-   component.
+   above, and are based on the size of icons within the button component.
 */
 const iconSize = {
 	xsmall: 20,
