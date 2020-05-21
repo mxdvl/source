@@ -19,8 +19,12 @@ import {
 	iconDefault,
 	iconSmall,
 	iconXsmall,
-	iconLeft,
-	iconRight,
+	iconLeftDefault,
+	iconLeftSmall,
+	iconLeftXsmall,
+	iconRightDefault,
+	iconRightSmall,
+	iconRightXsmall,
 	iconOnlyDefault,
 	iconOnlySmall,
 	iconOnlyXsmall,
@@ -57,10 +61,20 @@ const priorities: {
 }
 
 const iconSides: {
-	[key in IconSide]: SerializedStyles
+	[key in IconSide]: {
+		[key in Size]: SerializedStyles
+	}
 } = {
-	right: iconRight,
-	left: iconLeft,
+	right: {
+		default: iconRightDefault,
+		small: iconRightSmall,
+		xsmall: iconRightXsmall,
+	},
+	left: {
+		default: iconLeftDefault,
+		small: iconLeftSmall,
+		xsmall: iconLeftXsmall,
+	},
 }
 const sizes: {
 	[key in Size]: SerializedStyles
@@ -114,7 +128,7 @@ const Button = ({
 				sizes[size],
 				priorities[priority](theme.button && theme),
 				iconSvg ? iconSizes[size] : "",
-				iconSvg && children ? iconSides[iconSide] : "",
+				iconSvg && children ? iconSides[iconSide][size] : "",
 				!children ? iconOnlySizes[size] : "",
 				cssOverrides,
 			]}
@@ -150,7 +164,7 @@ const LinkButton = ({
 					sizes[size],
 					priorities[priority](theme.button && theme),
 					iconSizes[size],
-					children ? iconSides.right : "",
+					children ? iconSides.right[size] : "",
 					!children ? iconOnlySizes[size] : "",
 					iconNudgeAnimation,
 					cssOverrides,

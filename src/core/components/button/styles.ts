@@ -1,5 +1,6 @@
 import { css } from "@emotion/core"
-import { size, space, transitions } from "@guardian/src-foundations"
+import { space, transitions } from "@guardian/src-foundations"
+import { width, height } from "@guardian/src-foundations/size"
 import { buttonDefault, ButtonTheme } from "@guardian/src-foundations/themes"
 import { textSans } from "@guardian/src-foundations/typography"
 import { focusHalo } from "@guardian/src-foundations/accessibility"
@@ -69,28 +70,30 @@ export const subdued = ({
 	border-radius: 0;
 `
 
+/* TODO: think about spacing tokens for padding */
+/* TODO: think about border radius tokens */
 export const defaultSize = css`
 	${textSans.medium({ fontWeight: "bold" })};
-	height: ${size.medium}px;
-	min-height: ${size.medium}px;
-	padding: 0 ${size.medium / 2}px;
-	border-radius: ${size.medium / 2}px;
+	height: ${height.ctaMedium}px;
+	min-height: ${height.ctaMedium}px;
+	padding: 0 ${height.ctaMedium / 2}px;
+	border-radius: ${height.ctaMedium / 2}px;
 `
 
 export const smallSize = css`
 	${textSans.medium({ fontWeight: "bold" })};
-	height: ${size.small}px;
-	min-height: ${size.small}px;
-	padding: 0 ${size.small / 2}px;
-	border-radius: ${size.small / 2}px;
+	height: ${height.ctaSmall}px;
+	min-height: ${height.ctaSmall}px;
+	padding: 0 ${height.ctaSmall / 2}px;
+	border-radius: ${height.ctaSmall / 2}px;
 `
 
 export const xsmallSize = css`
 	${textSans.small({ fontWeight: "bold" })};
-	height: ${size.xsmall}px;
-	min-height: ${size.xsmall}px;
-	padding: 0 ${size.xsmall / 2}px;
-	border-radius: ${size.xsmall / 2}px;
+	height: ${height.ctaXsmall}px;
+	min-height: ${height.ctaXsmall}px;
+	padding: 0 ${height.ctaXsmall / 2}px;
+	border-radius: ${height.ctaXsmall / 2}px;
 `
 
 export const iconDefault = css`
@@ -99,7 +102,7 @@ export const iconDefault = css`
 		display: block;
 		fill: currentColor;
 		position: relative;
-		width: ${size.medium / 2}px;
+		width: ${width.iconMedium}px;
 		height: auto;
 	}
 `
@@ -110,7 +113,7 @@ export const iconSmall = css`
 		display: block;
 		fill: currentColor;
 		position: relative;
-		width: ${size.small / 2}px;
+		width: ${width.iconSmall}px;
 		height: auto;
 	}
 `
@@ -121,23 +124,71 @@ export const iconXsmall = css`
 		display: block;
 		fill: currentColor;
 		position: relative;
-		width: ${size.xsmall / 2}px;
+		width: ${width.iconXsmall}px;
 		height: auto;
 	}
 `
 
-export const iconRight = css`
+/*
+TODO: think about spacing tokens for negative margin,
+or adjust button padding. We might need to adjust this
+differently for each button size.
+*/
+const iconRight = css`
 	svg {
-		margin: 0 ${-size.medium / 8}px 0 ${size.medium / 4}px;
+		margin-right: -5.5px;
 	}
 `
 
-export const iconLeft = css`
+const iconLeft = css`
 	flex-direction: row-reverse;
 	svg {
-		margin: 0 ${size.medium / 4}px 0 ${-size.medium / 8}px;
+		margin-left: -5.5px;
 	}
 `
+
+export const iconRightDefault = css`
+	${iconRight};
+	svg {
+		margin-left: ${space[2]}px;
+	}
+`
+
+export const iconRightSmall = css`
+	${iconRight};
+	svg {
+		margin-left: ${space[1]}px;
+	}
+`
+
+export const iconRightXsmall = css`
+	${iconRight};
+	svg {
+		margin-left: ${space[1]}px;
+	}
+`
+
+export const iconLeftDefault = css`
+	${iconLeft};
+	svg {
+		margin-right: ${space[2]}px;
+	}
+`
+
+export const iconLeftSmall = css`
+	${iconLeft};
+	svg {
+		margin-right: ${space[1]}px;
+	}
+`
+
+export const iconLeftXsmall = css`
+	${iconLeft};
+	svg {
+		margin-right: ${space[1]}px;
+	}
+`
+
 const iconOnly = css`
 	justify-content: center;
 	padding: 0;
@@ -145,17 +196,17 @@ const iconOnly = css`
 
 export const iconOnlyDefault = css`
 	${iconOnly};
-	width: ${size.medium}px;
+	width: ${width.ctaMedium}px;
 `
 
 export const iconOnlySmall = css`
 	${iconOnly};
-	width: ${size.small}px;
+	width: ${width.ctaSmall}px;
 `
 
 export const iconOnlyXsmall = css`
 	${iconOnly};
-	width: ${size.xsmall}px;
+	width: ${width.ctaXsmall}px;
 `
 
 export const iconNudgeAnimation = css`

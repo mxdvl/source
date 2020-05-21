@@ -1,5 +1,6 @@
 import { css } from "@emotion/core"
-import { space, size, transitions } from "@guardian/src-foundations"
+import { space, transitions } from "@guardian/src-foundations"
+import { width, height } from "@guardian/src-foundations/size"
 import { visuallyHidden } from "@guardian/src-foundations/accessibility"
 import { textSans } from "@guardian/src-foundations/typography"
 import { focusHalo } from "@guardian/src-foundations/accessibility"
@@ -122,8 +123,7 @@ export const choiceCard = ({
 	flex: 1;
 	display: flex;
 	justify-content: center;
-	/* TODO: let's talk about size! */
-	min-height: ${size.medium}px;
+	min-height: ${height.ctaMedium}px;
 	margin: 0 0 ${space[2]}px 0;
 	box-shadow: inset 0 0 0 2px ${choiceCard.border};
 	border-radius: 4px;
@@ -166,13 +166,11 @@ export const contentWrapper = css`
 
 	& svg {
 		position: absolute;
-		/* TODO: 30px is a standard icon width, should probably exposed
-		as a size property */
-		width: 30px;
-		/* TODO: height is non-standard to support payment icons, which is
-		currently the only use case of the icon variant. We should find a way
-		to accommodate standard 30x30 icons too */
-		height: 20px;
+		/* TODO: icon dimensions are non-standard to support payment icons,
+		which is currently the only use case of the icon variant. We should
+		find a way to accommodate standard 30x30 icons too */
+		width: ${width.iconPayment}px;
+		height: ${height.iconPayment}px;
 		left: -34px; /* width + 4px "margin" */
 		fill: currentColor;
 

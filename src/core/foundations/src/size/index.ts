@@ -1,4 +1,4 @@
-import { size, iconSize } from "./global"
+import { size, remSize, iconSize, remIconSize } from "./global"
 
 const height = {
 	ctaMedium: size.medium,
@@ -10,6 +10,18 @@ const height = {
 	iconSmall: iconSize.small,
 	iconXsmall: iconSize.xsmall,
 	iconPayment: iconSize.xsmall,
+}
+
+const remHeight: { [K in keyof (typeof height)]: number } = {
+	ctaMedium: remSize.medium,
+	ctaSmall: remSize.small,
+	ctaXsmall: remSize.xsmall,
+	inputMedium: remSize.medium,
+	inputXsmall: remSize.xsmall,
+	iconMedium: remIconSize.medium,
+	iconSmall: remIconSize.small,
+	iconXsmall: remIconSize.xsmall,
+	iconPayment: remIconSize.xsmall,
 }
 
 const width = {
@@ -24,4 +36,16 @@ const width = {
 	iconPayment: iconSize.medium,
 }
 
-export { height, width }
+const remWidth: { [K in keyof (typeof width)]: number } = {
+	ctaMedium: remSize.medium,
+	ctaSmall: remSize.small,
+	ctaXsmall: remSize.xsmall,
+	inputMedium: remSize.medium,
+	inputXsmall: remSize.xsmall,
+	iconMedium: remIconSize.medium,
+	iconSmall: remIconSize.small,
+	iconXsmall: remIconSize.xsmall,
+	iconPayment: remIconSize.medium,
+}
+
+export { height, remHeight, width, remWidth }

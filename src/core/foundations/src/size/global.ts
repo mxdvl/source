@@ -1,4 +1,5 @@
 import { size as _size } from "../theme"
+import { pxToRem } from "../utils"
 
 /*
    The size scale is based entirely on the medium, small and
@@ -9,6 +10,12 @@ const size = {
 	xsmall: _size[0],
 	small: _size[1],
 	medium: _size[2],
+}
+
+const remSize: { [K in keyof (typeof size)]: number } = {
+	xsmall: pxToRem(_size[0]),
+	small: pxToRem(_size[1]),
+	medium: pxToRem(_size[2]),
 }
 
 /*
@@ -22,4 +29,10 @@ const iconSize = {
 	medium: 30,
 }
 
-export { size, iconSize }
+const remIconSize: { [K in keyof (typeof iconSize)]: number } = {
+	xsmall: pxToRem(20),
+	small: pxToRem(26),
+	medium: pxToRem(30),
+}
+
+export { size, remSize, iconSize, remIconSize }
