@@ -2,7 +2,8 @@
 	"compilerOptions": {
 		"baseUrl": ".",
 		"paths": {
-			"@guardian/src-foundations/palette": ["src/palette"]
+			"@guardian/src-foundations/palette": ["src/palette"],
+			"@guardian/src-foundations/utils": ["src/utils"]
 		},
 		"rootDir": "./src",
 		"outDir": ".",

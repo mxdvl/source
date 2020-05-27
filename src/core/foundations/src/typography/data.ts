@@ -1,5 +1,5 @@
 import { fontSizes, fonts, lineHeights, fontWeights } from "../theme"
-import { pxToRem } from "../utils"
+import { pxToRem } from "@guardian/src-foundations/utils"
 import {
 	Category,
 	LineHeight,

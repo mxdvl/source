@@ -26,6 +26,7 @@ const esmFolders = folders.map(folder => ({
 	external: [
 		"@guardian/src-foundations",
 		"@guardian/src-foundations/palette",
+		"@guardian/src-foundations/utils",
 	],
 }))
 
@@ -38,6 +39,8 @@ const cjsFolders = folders.map(folder => ({
 			paths: {
 				"@guardian/src-foundations/palette":
 					"@guardian/src-foundations/palette/cjs",
+				"@guardian/src-foundations/utils":
+					"@guardian/src-foundations/utils/cjs",
 			},
 		},
 	],
@@ -45,6 +48,7 @@ const cjsFolders = folders.map(folder => ({
 	external: [
 		"@guardian/src-foundations",
 		"@guardian/src-foundations/palette",
+		"@guardian/src-foundations/utils",
 	],
 }))
 
@@ -55,6 +59,10 @@ module.exports = [
 			{
 				file: "foundations.js",
 				format: "cjs",
+				paths: {
+					"@guardian/src-foundations/utils":
+						"@guardian/src-foundations/utils/cjs",
+				},
 			},
 			{
 				file: "foundations.esm.js",

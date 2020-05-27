@@ -1,5 +1,5 @@
 import { space as _space } from "./theme"
-import { pxToRem } from "./utils"
+import { pxToRem } from "@guardian/src-foundations/utils"
 
 const space = {
 	1: _space[1],
